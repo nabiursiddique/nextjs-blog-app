@@ -50,9 +50,10 @@ const Navbar = () => {
                                     <li key={link.id}><Link href={link.url}>{link.title}</Link></li>
                                 ))
                             }
+                            <li><button onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>Logout</button></li>
                         </ul>
                     </div>
-                    <Link className="btn btn-ghost normal-case text-xl" href='/'>Nabil{`'`}s Blog</Link>
+                    <Link className=" text-xl font-bold" href='/'>Nabil{`'`}s Blog</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
@@ -62,6 +63,7 @@ const Navbar = () => {
                                 <li key={link.id}><Link href={link.url}>{link.title}</Link></li>
                             ))
                         }
+                        <li><button onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>Logout</button></li>
                     </ul>
                 </div>
             </div>
