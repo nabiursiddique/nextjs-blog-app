@@ -2,6 +2,7 @@ import React from 'react';
 import Image from 'next/image'
 import heroImage from 'public/hero.png';
 import Button from '../Button/Button';
+import './style.css';
 
 const Hero = () => {
     return (
@@ -9,7 +10,7 @@ const Hero = () => {
             <div className="hero">
                 <div className="hero-content flex-col lg:flex-row-reverse w-full">
                     <div className='lg:w-4/5'>
-                        <Image src={heroImage} alt='hero image' />
+                        <Image className='animate-image' src={heroImage} alt='hero image' />
                     </div>
                     <div>
                         <h1 className="text-6xl font-bold leading-tight bg-gradient-to-b from-[#194c33] to-[#bbb] bg-clip-text text-transparent lg:w-3/4 w-full">Stay updated with with our blogs</h1>

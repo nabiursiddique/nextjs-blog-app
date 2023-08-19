@@ -6,7 +6,7 @@ import './style.css'
 
 const About = () => {
     return (
-        <div>
+        <div className='mb-8'>
             {/* Banner */}
             <div className='relative '>
 
