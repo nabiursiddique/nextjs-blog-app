@@ -11,7 +11,7 @@ const About = () => {
             <div className='relative '>
 
                 <div className='image-overlay'>
-                    <Image className='' src={employeesImage} alt='About banner image' />
+                    <Image className='gray-image' src={employeesImage} alt='About banner image' />
                 </div>
                 <h1 className='centered text-2xl text-center lg:hidden block absolute bg-green-700 text-white px-5 py-2'>About Us</h1>
                 <div className='lg:block md:block hidden absolute bottom-12 left-10 bg-green-700 text-white px-5 py-3 '>
@@ -24,10 +24,11 @@ const About = () => {
             </div>
 
             {/* Below banner content */}
-            <div>
+            <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 lg:gap-20 md:gap-12 gap-7 mx-5 mt-10'>
                 <div>
-                    <h1 className='text-2xl font-bold'>Who Are We?</h1>
-                    <p> Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
+                    <h1 className='text-2xl font-bold mb-3'>Who Are We?</h1>
+                    <p className='text-justify'>
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
                         quae dolor, optio voluptatibus magnam iure esse tempora beatae. A
                         suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea
                         eveniet? Lorem ipsum dolor sit amet consectetur adipisicing elit.
@@ -38,11 +39,12 @@ const About = () => {
                         voluptatum quo ea eveniet? Lorem ipsum dolor sit amet consectetur
                         adipisicing elit. Ducimus quae dolor, optio voluptatibus magnam iure
                         esse tempora beatae, a suscipit eos. Animi quibusdam cum omnis
-                        officiis voluptatum quo ea eveniet?</p>
+                        officiis voluptatum quo ea eveniet?
+                    </p>
                 </div>
                 <div >
-                    <h1 className='text-2xl font-bold'>What We Do?</h1>
-                    <p>
+                    <h1 className='text-2xl font-bold mb-3'>What We Do?</h1>
+                    <p className='mb-5 text-justify'>
                         Lorem ipsum dolor sit amet consectetur adipisicing elit. Ducimus
                         quae dolor, optio voluptatibus magnam iure esse tempora beatae, a
                         suscipit eos. Animi quibusdam cum omnis officiis voluptatum quo ea

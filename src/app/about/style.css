@@ -9,6 +9,10 @@
   background: linear-gradient(to right, #151515 0%, rgba(21, 21, 21, 0.6) 100%);
 }
 
+.gray-image {
+  filter: grayscale(100%);
+}
+
 .centered {
   top: 50%;
   left: 50%;
