@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import employeesImage from 'public/employees.jpg'
+import employeesImage from 'public/images/employees.jpg'
 import Button from '@/components/Button/Button';
 import './style.css'
 

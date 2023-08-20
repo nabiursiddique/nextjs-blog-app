@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import React from 'react';
-import contactImage from 'public/contact.png';
+import contactImage from 'public/images/contact.png';
 import './style.css'
 
 const Contact = () => {

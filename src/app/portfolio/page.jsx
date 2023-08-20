@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import React from 'react';
-import illustration from 'public/illustration.png';
-import websites from 'public/websites.jpg';
-import apps from 'public/apps.jpg';
+import illustration from 'public/images/illustration.png';
+import websites from 'public/images/websites.jpg';
+import apps from 'public/images/apps.jpg';
 import Image from 'next/image';
 
 const items = [

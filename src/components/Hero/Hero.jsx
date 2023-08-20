@@ -1,6 +1,6 @@
 import React from 'react';
 import Image from 'next/image'
-import heroImage from 'public/hero.png';
+import heroImage from 'public/images/hero.png';
 import Button from '../Button/Button';
 import './style.css';
 

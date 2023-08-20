@@ -50,12 +50,14 @@ const Navbar = () => {
                                     <li key={link.id}><Link href={link.url}>{link.title}</Link></li>
                                 ))
                             }
-                            <li><button onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>Logout</button></li>
+                            <li onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>
+                                Logout
+                            </li>
                         </ul>
                     </div>
-                    <Link className=" text-xl font-bold text-[#53c28b] lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
+                    <Link className=" text-xl font-bold bg-gradient-to-r from-[#53c28b] to-green-100 text-transparent bg-clip-text lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
                 </div>
-                <div className="navbar-end hidden lg:flex">
+                <div className="navbar-end w-full hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
 
                         {
@@ -63,7 +65,8 @@ const Navbar = () => {
                                 <li key={link.id}><Link href={link.url}>{link.title}</Link></li>
                             ))
                         }
-                        <li><button onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>Logout</button></li>
+                        <li className='btn btn-sm btn-outline btn-error capitalize ml-3' onClick={() => { console.log('Logged out') }}>
+                            Logout</li>
                     </ul>
                 </div>
             </div>
