@@ -53,7 +53,7 @@ const Navbar = () => {
                             <li><button onClick={() => { console.log('Logged out') }} className='btn btn-sm btn-outline btn-error capitalize'>Logout</button></li>
                         </ul>
                     </div>
-                    <Link className=" text-xl font-bold" href='/'>Nabil{`'`}s Blog</Link>
+                    <Link className=" text-xl font-bold text-[#53c28b] lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
                 </div>
                 <div className="navbar-end hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
