@@ -1,16 +1,24 @@
 "use client"
 
-import React, { useContext, useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BsSun } from "react-icons/bs";
 import { GoMoon } from "react-icons/go";
-import { ThemeContext } from '../../../contexts/ThemeContext/ThemeContext';
 
 const DarkLightToggole = () => {
-    const { toggle, mode } = useContext(ThemeContext);
+    const [mode, setMode] = useState(localStorage.getItem('theme') || "dark");
+
+    const toggle = () => {
+        if (mode === 'dark') {
+            setMode('light');
+
+        } else {
+            setMode('dark');
+        }
+    };
 
     useEffect(() => {
         localStorage.setItem('theme', mode);
-        document.querySelector('.main-div').setAttribute('data-theme', mode);
+        document.querySelector('html').setAttribute('data-theme', mode);
     }, [mode]);
 
     return (

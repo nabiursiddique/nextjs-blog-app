@@ -1,8 +1,7 @@
 "use client"
 import Link from 'next/link';
-import React, { useContext } from 'react';
+import React from 'react';
 import DarkLightToggole from '../DarkLightToggle/DarkLightToggole';
-import { ThemeContext } from '../../../contexts/ThemeContext/ThemeContext';
 
 const links = [
     {
@@ -58,7 +57,7 @@ const Navbar = () => {
                             </li>
                         </ul>
                     </div>
-                    <Link className=" text-xl font-bold bg-gradient-to-r from-[#53c28b] to-green-100 text-transparent bg-clip-text lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
+                    <Link className=" text-xl font-bold bg-gradient-to-r from-[#53c28b] to-green-300 text-transparent bg-clip-text lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
                 </div>
                 <div className="navbar-end lg:w-full ">
                     <ul className="menu menu-horizontal px-1 hidden lg:flex">

@@ -2,7 +2,6 @@ import Navbar from '@/components/Navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
 import Footer from '@/components/Footer/Footer'
-import { ThemeProvider } from '../../contexts/ThemeContext/ThemeContext'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,15 +12,13 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en">
+    <html data-theme='dark' lang="en">
       <body className={inter.className}>
-        <ThemeProvider>
-          <div data-theme='dark' className='max-w-[1440px] mx-auto main-div'>
-            <Navbar />
-            {children}
-            <Footer />
-          </div>
-        </ThemeProvider>
+        <div className='max-w-[1440px] mx-auto'>
+          <Navbar />
+          {children}
+          <Footer />
+        </div>
       </body>
     </html >
   )
