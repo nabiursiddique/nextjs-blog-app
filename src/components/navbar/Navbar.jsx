@@ -1,6 +1,8 @@
 "use client"
 import Link from 'next/link';
-import React from 'react';
+import React, { useContext } from 'react';
+import DarkLightToggole from '../DarkLightToggle/DarkLightToggole';
+import { ThemeContext } from '../../../contexts/ThemeContext/ThemeContext';
 
 const links = [
     {
@@ -36,6 +38,7 @@ const links = [
 ];
 
 const Navbar = () => {
+
     return (
         <div>
             <div className="navbar bg-base-100">
@@ -57,9 +60,8 @@ const Navbar = () => {
                     </div>
                     <Link className=" text-xl font-bold bg-gradient-to-r from-[#53c28b] to-green-100 text-transparent bg-clip-text lg:mx-5" href='/'>Nabil{`'`}s Blog</Link>
                 </div>
-                <div className="navbar-end w-full hidden lg:flex">
-                    <ul className="menu menu-horizontal px-1">
-
+                <div className="navbar-end lg:w-full ">
+                    <ul className="menu menu-horizontal px-1 hidden lg:flex">
                         {
                             links.map(link => (
                                 <li key={link.id}><Link href={link.url}>{link.title}</Link></li>
@@ -68,11 +70,11 @@ const Navbar = () => {
                         <li className='btn btn-sm btn-outline btn-error capitalize ml-3' onClick={() => { console.log('Logged out') }}>
                             Logout</li>
                     </ul>
+                    <button className='text-xl mx-3'>
+                        <DarkLightToggole />
+                    </button>
                 </div>
             </div>
-            {/* Customize */}
-
-
         </div>
     );
 };
