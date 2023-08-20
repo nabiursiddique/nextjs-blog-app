@@ -5,7 +5,10 @@ import { BsSun } from "react-icons/bs";
 import { GoMoon } from "react-icons/go";
 
 const DarkLightToggole = () => {
-    const [mode, setMode] = useState(localStorage.getItem('theme') || "dark");
+    // Even if local storage is not available then dark will be in default
+    const [mode, setMode] = useState(
+        typeof window !== 'undefined' ? localStorage.getItem('theme') || 'dark' : 'dark'
+    );
 
     const toggle = () => {
         if (mode === 'dark') {
@@ -17,7 +20,9 @@ const DarkLightToggole = () => {
     };
 
     useEffect(() => {
-        localStorage.setItem('theme', mode);
+        if (typeof window !== 'undefined') {
+            localStorage.setItem('theme', mode);
+        }
         document.querySelector('html').setAttribute('data-theme', mode);
     }, [mode]);
 
