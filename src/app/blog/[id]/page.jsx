@@ -1,15 +1,27 @@
 import Image from 'next/image';
 import React from 'react';
+import { notFound } from 'next/navigation'
 
-const BlogPost = ({ params }) => {
+async function getData(id) {
+    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+        cache: "no-store",
+    });
+    if (!res.ok) {
+        return notFound();
+    }
+    return res.json()
+}
+
+const BlogPost = async ({ params }) => {
+    const data = await getData(params.id)
     return (
         <div className='m-5'>
             <h1 className='text-2xl capitalize font-bold text-[#53c28b]'>{params.category}</h1>
 
             <div className='grid lg:grid-cols-2 md:grid-cols-2 grid-cols-1 gap-10 mb-3'>
                 <div className='my-auto'>
-                    <h1 className='text-4xl font-bold mb-4'>Creative Portfolio</h1>
-                    <p className='mb-5'>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Minus reiciendis provident dolorem perferendis, ipsum laboriosam voluptatem repellat obcaecati a! Dolores.</p>
+                    <h1 className='text-4xl font-bold mb-4'>{data.title}</h1>
+                    <p className='mb-5'>{data.body}</p>
                 </div>
                 <div className='h-60 relative'>
                     <Image
