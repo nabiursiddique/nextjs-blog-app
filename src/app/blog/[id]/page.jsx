@@ -3,13 +3,21 @@ import React from 'react';
 import { notFound } from 'next/navigation'
 
 async function getData(id) {
-    const res = await fetch(`https://jsonplaceholder.typicode.com/posts/${id}`, {
+    const res = await fetch(`http://localhost:3000/api/posts/${id}`, {
         cache: "no-store",
     });
     if (!res.ok) {
         return notFound();
     }
     return res.json()
+}
+
+export async function generateMetadata({ params }) {
+    const post = await getData(params.id)
+    return {
+        title: `Nabil Blog || ${post.title}`,
+        description: post.description
+    }
 }
 
 const BlogPost = async ({ params }) => {
@@ -28,9 +36,10 @@ const BlogPost = async ({ params }) => {
                         className='object-cover rounded-lg'
                         src={"https://images.pexels.com/photos/3817676/pexels-photo-3817676.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2"} alt='art Image' fill />
                 </div>
+                <div><span className='text-xl font-bold'>Username:</span>{data.username}</div>
             </div>
             <div className='my-8'>
-                <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Totam officiis obcaecati blanditiis, corrupti quae deserunt praesentium quos sed amet nisi eaque quas natus? Provident harum ratione dolorum explicabo dolores, repellat dignissimos magni ipsa fuga corrupti, unde dolorem facilis eveniet nam rerum quis ut excepturi quod obcaecati amet necessitatibus perspiciatis quo!</p>
+                <p>{data.description}</p>
             </div>
         </div>
     );

@@ -3,6 +3,12 @@ import React from 'react';
 import contactImage from 'public/images/contact.png';
 import './style.css'
 
+export const metadata = {
+    title: "Nabil's Blog || Contact",
+    description: 'Nabil nextjs website',
+}
+
+
 const Contact = () => {
     return (
         <div className='lg:mx-10 my-10'>
